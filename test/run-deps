@@ -49,6 +49,11 @@ testPsycopg2() {
 }
 
 testPysqlite() {
+  # pysqlite does not support Python 3 (since the sqlite3 stdlib can be used there),
+  # so we have to test with Python 2, which we've not made available for Heroku-20.
+  if [[ $STACK == "heroku-20" ]]; then
+    return
+  fi
   compile "pysqlite"
   assertCaptured "pysqlite"
   assertCapturedSuccess

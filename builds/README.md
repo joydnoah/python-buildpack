@@ -7,6 +7,7 @@
     $ docker build --pull --tag heroku-python-build-cedar-14 --file $(pwd)/builds/cedar-14.Dockerfile .
     $ docker build --pull --tag heroku-python-build-heroku-16 --file $(pwd)/builds/heroku-16.Dockerfile .
     $ docker build --pull --tag heroku-python-build-heroku-18 --file $(pwd)/builds/heroku-18.Dockerfile .
+    $ docker build --pull --tag heroku-python-build-heroku-20 --file $(pwd)/builds/heroku-20.Dockerfile .
 
 ## Using the Image
 
@@ -15,6 +16,7 @@ You can e.g. `bash` into each of the images you built using their tag:
     docker run --rm -ti heroku-python-build-cedar-14 bash
     docker run --rm -ti heroku-python-build-heroku-16 bash
     docker run --rm -ti heroku-python-build-heroku-18 bash
+    docker run --rm -ti heroku-python-build-heroku-20 bash
 
 You then have a shell where you can run `bob build`, `bob deploy`, and so forth. You can of course also invoke these programs directly with `docker run`:
 

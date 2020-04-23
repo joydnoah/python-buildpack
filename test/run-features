@@ -59,13 +59,17 @@ testPipenvVersion() {
 }
 
 testPipenvVersion2() {
+  # Since Python 2 is EOL we've chosen to not make it available on Heroku-20.
+  if [[ $STACK == "heroku-20" ]]; then
+    return
+  fi
   compile "pipenv-version2"
   assertCaptured $LATEST_27
   assertCapturedSuccess
 }
 testPipenvFullVersion() {
   compile "pipenv-full-version"
-  assertCaptured "3.6.3"
+  assertCaptured "3.7.7"
   assertCapturedSuccess
 }
 

@@ -81,6 +81,7 @@ make test
 Or to test in a particular stack:
 
 ```
+make test-heroku-20
 make test-heroku-18
 make test-heroku-16
 ```

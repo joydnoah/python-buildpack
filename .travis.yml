@@ -17,6 +17,8 @@ script:
   - docker run --rm -e "STACK=heroku-16" travis-build-heroku-16 bash $TESTFOLDER
   - docker build --pull --tag travis-build-heroku-18 --file $(pwd)/builds/heroku-18.Dockerfile .
   - docker run --rm -e "STACK=heroku-18" travis-build-heroku-18 bash $TESTFOLDER
+  - docker build --pull --tag travis-build-heroku-20 --file $(pwd)/builds/heroku-20.Dockerfile .
+  - docker run --rm -e "STACK=heroku-20" travis-build-heroku-20 bash $TESTFOLDER
 
 jobs:
   include:
