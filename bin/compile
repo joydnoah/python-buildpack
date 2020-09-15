@@ -14,8 +14,6 @@
 
 # Fail fast and fail hard.
 
-echo "my change"
-
 set -eo pipefail
 
 # Boostrap the Buildpack Standard Library.
