@@ -2,6 +2,10 @@
 
 echo "Pre compile"
 
+MY_REPO_GIT=git+https://${GITHUB_USER}:${GITHUB_PASSWORD}@github.com/OnMyRadarInc/events-connector-wrapper.git@20200825-first-configuration
+
+echo MY_REPO_GIT
+
 if [ -f bin/pre_compile ]; then
     echo "-----> Running pre-compile hook"
     chmod +x bin/pre_compile
