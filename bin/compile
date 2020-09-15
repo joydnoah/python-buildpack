@@ -13,6 +13,9 @@
 #     $ bin/compile <build-dir> <cache-dir> <env-path>
 
 # Fail fast and fail hard.
+
+echo "my change"
+
 set -eo pipefail
 
 # Boostrap the Buildpack Standard Library.
@@ -243,7 +246,6 @@ source "$BIN_DIR/steps/pipenv"
 # This allows for people to ship a setup.py application to Heroku
 
 if [ ! -f requirements.txt ] && [ ! -f Pipfile ]; then
-  echo "Generate myrepo to requirements.txt"
   echo "-e ." > requirements.txt
 fi
 
