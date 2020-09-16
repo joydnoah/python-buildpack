@@ -45,7 +45,9 @@ acceptlist_regex=${2:-''}
 denylist_regex=${3:-'^(PATH|GIT_DIR|CPATH|CPPATH|LD_PRELOAD|LIBRARY_PATH)$'}
 if [ -d "$env_dir" ]; then
   echo "here"
+  echo "$(cat $env_dir/'GITHUB_USER')"
   GITHUB_USER = "$(cat $env_dir/'GITHUB_USER')"
+  echo "${GITHUB_USER}"
   for e in $(ls $env_dir); do
     echo "$e" | grep -E "$acceptlist_regex" | grep -qvE "$denylist_regex" &&
     export "$e=$(cat $env_dir/$e)"
