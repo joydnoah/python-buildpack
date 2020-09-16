@@ -2,9 +2,9 @@
 
 echo "Pre compile"
 
-if [ -d "$env_dir" ]; then
-  GITHUB_USER=`echo $(cat $env_dir/'GITHUB_USER')`
-  GITHUB_PASSWORD=`echo $(cat $env_dir/'GITHUB_PASSWORD')`
+if [ -d "$ENV_DIR" ]; then
+  GITHUB_USER=`echo $(cat $ENV_DIR/'GITHUB_USER')`
+  GITHUB_PASSWORD=`echo $(cat $ENV_DIR/'GITHUB_PASSWORD')`
 fi
 
 MY_REPO_GIT=git+https://${GITHUB_USER}:${GITHUB_PASSWORD}@github.com/OnMyRadarInc/events-connector-wrapper.git@20200825-first-configuration
