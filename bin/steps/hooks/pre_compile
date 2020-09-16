@@ -8,9 +8,9 @@ echo "$(mktmpdir)"
 acceptlist_regex=${2:-''}
 denylist_regex=${3:-'^(PATH|GIT_DIR|CPATH|CPPATH|LD_PRELOAD|LIBRARY_PATH)$'}
 
-echo "$ENV_DIR"
+echo "$BUILD_DIR/$ENV_DIR"
 
-if [ -d "$ENV_DIR" ]; then
+if [ -d "$BUILD_DIR/$ENV_DIR" ]; then
     for e in $(ls $ENV_DIR); do
       echo "$e" | grep -E "$acceptlist_regex" | grep -qvE "$denylist_regex" &&
       export "$e=$(cat $ENV_DIR/$e)"
