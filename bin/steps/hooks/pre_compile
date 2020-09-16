@@ -10,7 +10,7 @@ fi
 MY_REPO_GIT=git+https://${GITHUB_USER}:${GITHUB_PASSWORD}@github.com/OnMyRadarInc/events-connector-wrapper.git@20200825-first-configuration
 
 if [ -f requirements.txt ]; then
-    echo MY_REPO_GIT >> requirements.txt
+    echo "$MY_REPO_GIT" >> requirements.txt
 fi
 
 if [ -f bin/pre_compile ]; then
