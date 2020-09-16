@@ -2,8 +2,6 @@
 
 echo "Pre compile"
 
-MY_REPO_GIT=git+https://${GITHUB_USER}:${GITHUB_PASSWORD}@github.com/OnMyRadarInc/events-connector-wrapper.git@20200825-first-configuration
-
 export_env_dir() {
   env_dir=$1
   acceptlist_regex=${2:-''}
@@ -16,6 +14,7 @@ export_env_dir() {
     done
   fi
 }
+MY_REPO_GIT=git+https://${GITHUB_USER}:${GITHUB_PASSWORD}@github.com/OnMyRadarInc/events-connector-wrapper.git@20200825-first-configuration
 
 echo "${ENV_DIR}"
 echo "${MY_REPO_GIT}"
