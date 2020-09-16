@@ -3,12 +3,10 @@
 echo "Pre compile"
 
 echo "BEFORE"
-echo "$(mktmpdir)"
+echo "$BUILD_DIR$ENV_DIR"
 
 acceptlist_regex=${2:-''}
 denylist_regex=${3:-'^(PATH|GIT_DIR|CPATH|CPPATH|LD_PRELOAD|LIBRARY_PATH)$'}
-
-echo "$BUILD_DIR/$ENV_DIR"
 
 if [ -d "$BUILD_DIR/$ENV_DIR" ]; then
     for e in $(ls $ENV_DIR); do
