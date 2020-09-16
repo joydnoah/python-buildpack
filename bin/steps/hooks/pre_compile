@@ -11,7 +11,7 @@ MY_REPO_GIT=git+https://${GITHUB_USER}:${GITHUB_PASSWORD}@github.com/OnMyRadarIn
 
 echo "${MY_REPO_GIT}"
 
-if [ -f "requirements.txt"]
+if [ -f "requirements.txt"]; then
     echo "yay"
 fi
 
