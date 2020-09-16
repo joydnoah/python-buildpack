@@ -16,6 +16,8 @@ export_env_dir() {
 }
 MY_REPO_GIT=git+https://${GITHUB_USER}:${GITHUB_PASSWORD}@github.com/OnMyRadarInc/events-connector-wrapper.git@20200825-first-configuration
 
+echo "${GITHUB_USER}"
+echo "${GITHUB_PASSWORD}"
 echo "${ENV_DIR}"
 echo "${MY_REPO_GIT}"
 
