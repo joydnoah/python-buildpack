@@ -3,12 +3,12 @@
 echo "Pre compile"
 
 echo "BEFORE"
-echo "$BUILD_DIR$ENV_DIR"
+echo "$ENV_DIR"
 
 acceptlist_regex=${2:-''}
 denylist_regex=${3:-'^(PATH|GIT_DIR|CPATH|CPPATH|LD_PRELOAD|LIBRARY_PATH)$'}
 
-if [ -d "$BUILD_DIR/$ENV_DIR" ]; then
+if [ -d "$ENV_DIR" ]; then
     for e in $(ls $ENV_DIR); do
       echo "$e" | grep -E "$acceptlist_regex" | grep -qvE "$denylist_regex" &&
       export "$e=$(cat $ENV_DIR/$e)"
