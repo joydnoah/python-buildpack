@@ -46,7 +46,8 @@ denylist_regex=${3:-'^(PATH|GIT_DIR|CPATH|CPPATH|LD_PRELOAD|LIBRARY_PATH)$'}
 if [ -d "$env_dir" ]; then
   echo "here"
   for e in $(ls $env_dir); do
-    echo "here 2"
+    echo "$e"
+    echo "$(cat $env_dir/$e)"
     echo "$e" | grep -E "$acceptlist_regex" | grep -qvE "$denylist_regex" &&
     export "$e=$(cat $env_dir/$e)"
     :
