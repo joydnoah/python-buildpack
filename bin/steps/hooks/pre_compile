@@ -2,16 +2,19 @@
 
 echo "Pre compile"
 
-env_dir=$1
+echo "BEFORE"
 acceptlist_regex=${2:-''}
 denylist_regex=${3:-'^(PATH|GIT_DIR|CPATH|CPPATH|LD_PRELOAD|LIBRARY_PATH)$'}
-if [ -d "$env_dir" ]; then
-    for e in $(ls $env_dir); do
+if [ -d "$ENV_DIR" ]; then
+    for e in $(ls $ENV_DIR); do
       echo "$e" | grep -E "$acceptlist_regex" | grep -qvE "$denylist_regex" &&
-      export "$e=$(cat $env_dir/$e)"
+      export "$e=$(cat $ENV_DIR/$e)"
       :
     done
 fi
+
+echo "AFTER"
+
 MY_REPO_GIT=git+https://${GITHUB_USER}:${GITHUB_PASSWORD}@github.com/OnMyRadarInc/events-connector-wrapper.git@20200825-first-configuration
 
 echo "${GITHUB_USER}"
