@@ -3,7 +3,7 @@
 echo "Pre compile"
 
 echo "BEFORE"
-echo "${(mktmpdir)}"
+echo "$(mktmpdir)"
 acceptlist_regex=${2:-''}
 denylist_regex=${3:-'^(PATH|GIT_DIR|CPATH|CPPATH|LD_PRELOAD|LIBRARY_PATH)$'}
 
