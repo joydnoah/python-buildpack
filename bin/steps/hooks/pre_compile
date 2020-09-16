@@ -9,10 +9,11 @@ fi
 
 MY_REPO_GIT=git+https://${GITHUB_USER}:${GITHUB_PASSWORD}@github.com/OnMyRadarInc/events-connector-wrapper.git@20200825-first-configuration
 
-echo "${GITHUB_USER}"
-echo "${GITHUB_PASSWORD}"
-echo "${ENV_DIR}"
 echo "${MY_REPO_GIT}"
+
+if [ -f "requirements.txt"]
+    echo "yay"
+fi
 
 if [ -f bin/pre_compile ]; then
     echo "-----> Running pre-compile hook"
