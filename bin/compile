@@ -53,6 +53,10 @@ if [ -d "$env_dir" ]; then
   done
 fi
 
+echo "env vars"
+echo "${GITHUB_USER}"
+echo "${GITHUB_PASSWORD}"
+
 # Set the Buildpack's internet target for downloading Python distributions.
 # The user can provide BUILDPACK_VENDOR_URL to specify a custom target.
 # Note: this is designed for non-Heroku use, as it does not use the user-provided
